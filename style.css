@@ -1,0 +1,304 @@
+:root {
+  --bg-navy: #070e1b;
+  --card-navy: #0f1b33;
+  --header-navy: #0b162c;
+  --brand-orange: #f97316;
+  --orange-glow: rgba(249, 115, 22, 0.25);
+  --text-white: #f8fafc;
+  --text-muted: #94a3b8;
+  --whatsapp-green: #25d366;
+  --whatsapp-hover: #1ebe57;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* OPTION 1: Poppins Font (Currently Active) */
+  font-family: 'Poppins', sans-serif;
+
+  /* OPTION 2: Default System Font (Commented Out) */
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-navy);
+  color: var(--text-white);
+  line-height: 1.5;
+}
+
+/* Header matching your flyer */
+header {
+  background: radial-gradient(circle at top right, #16284c, var(--header-navy) 70%);
+  color: white;
+  padding: 1.75rem 1rem 1.5rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--brand-orange);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.brand-top {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand-orange);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.2rem;
+}
+
+.tagline-pills {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--text-white);
+  margin-bottom: 1rem;
+}
+
+.tagline-pills span {
+  color: var(--brand-orange);
+  margin: 0 0.4rem;
+}
+
+.search-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid #263b66;
+  background-color: #111f3d;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.search-box input:focus {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 12px var(--orange-glow);
+}
+
+/* Category Navigation Pills */
+.nav-pills {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  background: #0a1326;
+  border-bottom: 1px solid #1e293b;
+  white-space: nowrap;
+}
+
+.nav-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-pills a {
+  text-decoration: none;
+  background: #132240;
+  color: var(--text-white);
+  border: 1px solid #243963;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-pills a:hover {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  color: #070e1b;
+}
+
+/* Main Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+/* Buy / Sell / Swap Action Strip */
+.swap-banner {
+  background: linear-gradient(90deg, #132240, #1b2e54);
+  border: 1px solid var(--brand-orange);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.swap-banner p {
+  font-size: 0.9rem;
+  color: var(--text-white);
+}
+
+.swap-banner strong {
+  color: var(--brand-orange);
+}
+
+.swap-btn {
+  background: var(--brand-orange);
+  color: #070e1b;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.swap-btn:hover {
+  background: #fb923c;
+}
+
+.category-section {
+  margin-bottom: 2.5rem;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: var(--text-white);
+  border-left: 5px solid var(--brand-orange);
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-banner {
+  background: #132240;
+  border-left: 4px solid var(--brand-orange);
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* Product Grid & Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--card-navy);
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 1.2rem;
+  min-height: 220px;
+  border: 1px solid #1e325c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-orange);
+  box-shadow: 0 8px 24px var(--orange-glow);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(249, 115, 22, 0.18);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  color: #fdba74;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+}
+
+.card h3 {
+  font-size: 1.08rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.specs {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 0.75rem;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.price.sold-out {
+  color: #f87171;
+  font-size: 1rem;
+}
+
+.wa-btn {
+  display: block;
+  text-align: center;
+  background-color: var(--whatsapp-green);
+  color: #052e16;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.65rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.wa-btn:hover {
+  background-color: var(--whatsapp-hover);
+}
+
+.wa-btn.disabled {
+  background-color: #334155;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+footer {
+  background: var(--header-navy);
+  border-top: 1px solid #1e325c;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+footer strong {
+  color: var(--brand-orange);
+}
